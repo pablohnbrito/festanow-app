@@ -2,11 +2,21 @@
 ![Logo FestaNow](ibagem.jpeg)
 
 
-**FestaNow** é um sistema de gerenciamento de eventos desenvolvido com **Spring Boot** e **Kotlin**. A aplicação permite o gerenciamento completo de eventos, desde o cadastro até a participação dos usuários, integrando funcionalidades como a busca de eventos por data, tipo e localidade. Utiliza **MariaDB** como banco de dados e está preparada para ser facilmente implantada e mantida, tanto em ambientes locais quanto em containers Docker.
+**FestaNow** é um sistema de gerenciamento de eventos desenvolvido com **Spring Boot** e **Kotlin**. A aplicação permite o gerenciamento completo de eventos, desde o cadastro até a participação dos usuários, integrando funcionalidades como a busca de eventos por data, tipo e localidade. Utiliza **MariaDB** como banco de dados e está preparada para ser facilmente implantada e mantida, tanto em ambientes locais quanto em containers **Docker**.
 
-## Apêndice
+## 📖 Autores
 
-Adicione qualquer outra informação relevante aqui, como recursos adicionais, links úteis, ou notas sobre futuras atualizações.
+- Pablo Henrique Brito [@pablohnbrito](https://github.com/pablohnbrito) - DevOps
+
+- Vinicius Fernandes [@vinicius790](https://github.com/vinicius790)  - Documentação
+
+- Dayvison Freitas [@Dayvisonf](https://github.com/Dayvisonf) - Desenvolvedor Backend
+
+- Natã Ferreira [@INatanDev](https://github.com/INatanDev) - Desenvolvedor Backend
+  
+- Viviana Domingos [@vivianadomingos](https://github.com/vivianadomingos) - Scrum Master
+
+  
 
 # Documentação da API
 
@@ -43,4 +53,36 @@ Remove Evento por ID
 ```http
   DELETE localhost:8080/eventos/{id}
 ```
-''
+
+
+## Participantes
+
+#### Cadastro de Participante
+
+```http
+  POST localhost:8080/participante
+
+  {
+    "nome": "João Silva",
+    "email": "joao.silva@example.com",
+    "senha": "senha123"
+  }
+
+```
+
+Retorna Todos os Participantes
+```http
+  GET localhost:8080/participante
+```
+
+Busca Participante por ID
+```http
+  GET localhost:8080/participante/{id}
+```
+
+Remove Participante por ID
+```http
+  DELETE localhost:8080/participante/{id}
+```
+
+
