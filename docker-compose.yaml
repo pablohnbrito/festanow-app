@@ -1,0 +1,36 @@
+version: "3.9"
+
+services:
+  mariadb:
+    image: mariadb:latest
+    container_name: mariadb-container
+    ports:
+      - "3307:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: mydatabase
+      MYSQL_USER: myuser
+      MYSQL_PASSWORD: mypassword
+    volumes:
+      - mariadb_data:/var/lib/mysql # Persistência dos dados
+      - ./init-db.sql:/docker-entrypoint-initdb.d/init-db.sql # Script SQL opcional
+    restart: always
+
+  spring-app:
+    build:
+      context: . # Diretório onde está o Dockerfile da aplicação Spring Boot
+      dockerfile: Dockerfile # Nome do Dockerfile para o Spring Boot
+    container_name: spring-app-container
+    ports:
+      - "8080:8080" # Porta exposta pela aplicação
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://mariadb:3306/mydatabase
+      SPRING_DATASOURCE_USERNAME: myuser
+      SPRING_DATASOURCE_PASSWORD: mypassword
+      SPRING_JPA_HIBERNATE_DDL_AUTO: update
+    depends_on:
+      - mariadb # Garante que o banco MariaDB suba antes da aplicação Spring Boot
+    restart: always
+
+volumes:
+  mariadb_data:
