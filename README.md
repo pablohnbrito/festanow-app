@@ -4,6 +4,8 @@
 
 **FestaNow** é um sistema de gerenciamento de eventos desenvolvido com **Spring Boot** e **Kotlin**. A aplicação permite o gerenciamento completo de eventos, desde o cadastro até a participação dos usuários, integrando funcionalidades como a busca de eventos por data, tipo e localidade. Utiliza **MariaDB** como banco de dados e está preparada para ser facilmente implantada e mantida, tanto em ambientes locais quanto em containers **Docker**.
 
+#### - Para ajudar no projeto, verifique primeiro o [CONTRIBUTING.md](https://github.com/pablohnbrito/festanow-app/blob/main/CONTRIBUTING.md)
+
 ## 📖 Autores
 
 - Pablo Henrique Brito [@pablohnbrito](https://github.com/pablohnbrito) - DevOps
