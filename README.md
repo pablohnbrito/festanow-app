@@ -39,17 +39,17 @@
   }
 ```
 
-Retorna Todos os Eventos
+#### Retorna Todos os Eventos
 ```http
   GET localhost:8080/evento
 ```
 
-Busca Evento por ID
+#### Busca Evento por ID
 ```http
   GET localhost:8080/evento/{id}
 ```
 
-Remove Evento por ID
+#### Remove Evento por ID
 ```http
   DELETE localhost:8080/eventos/{id}
 ```
@@ -70,17 +70,17 @@ Remove Evento por ID
 
 ```
 
-Retorna Todos os Participantes
+#### Retorna Todos os Participantes
 ```http
   GET localhost:8080/participante
 ```
 
-Busca Participante por ID
+#### Busca Participante por ID
 ```http
   GET localhost:8080/participante/{id}
 ```
 
-Remove Participante por ID
+#### Remove Participante por ID
 ```http
   DELETE localhost:8080/participante/{id}
 ```
