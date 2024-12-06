@@ -11,7 +11,6 @@ data class Participante(
 
     val nome: String,
     val email: String,
-    @JsonIgnore
     val senha: String,
 
     @ManyToMany
